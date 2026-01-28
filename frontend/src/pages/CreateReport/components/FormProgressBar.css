@@ -1,0 +1,120 @@
+.progress-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    z-index: 2;
+}
+
+.step-marker {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-muted);
+}
+
+.step-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+}
+
+/* Horizontal Connector */
+.progress-step::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    z-index: -1;
+    transition: background 0.4s ease;
+}
+
+/* Hide last connector */
+.progress-step:last-child::after {
+    display: none;
+}
+
+/* Active & Completed States */
+.progress-step.active .step-marker {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    color: var(--accent);
+    background: rgba(245, 158, 11, 0.1);
+    transform: scale(1.1);
+}
+
+.progress-step.active .step-label {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.progress-step.completed .step-marker {
+    background: var(--success);
+    border-color: var(--success);
+    color: #000;
+}
+
+.progress-step.completed .step-label {
+    color: var(--success);
+}
+
+.progress-step.completed::after {
+    background: var(--success);
+}
+
+/* Responsiveness Fixes */
+@media (max-width: 850px) {
+    .step-label {
+        font-size: 0.65rem;
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .progress-bar-container {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+    .step-label {
+        display: none;
+        /* Hide labels on mobile to prevent overlap */
+    }
+
+    .step-marker {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .progress-step::after {
+        top: 16px;
+    }
+}

@@ -1,0 +1,187 @@
+.login-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-main);
+}
+
+.login-visual {
+    flex: 1.2;
+    background: url('https://images.unsplash.com/photo-1515165562839-978bbcf18277?q=80&w=2070&auto=format&fit=crop') center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%);
+}
+
+.visual-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+}
+
+.login-logo-big {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.4));
+}
+
+.visual-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.visual-content p {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.login-form-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 3rem;
+    border-radius: 24px;
+}
+
+.login-card .form-header {
+    margin-bottom: 2.5rem;
+}
+
+.login-card h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.role-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.role-selector button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.role-selector button.active {
+    background: var(--accent);
+    color: #000;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.login-btn {
+    width: 100%;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.login-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(245, 158, 11, 0.5);
+}
+
+.login-tip {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2rem;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .login-visual {
+        flex: 0.8;
+    }
+
+    .visual-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .login-visual {
+        display: none;
+    }
+
+    .login-form-side {
+        padding: 1.5rem;
+        background: var(--bg-main);
+    }
+
+    .login-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .role-selector {
+        flex-direction: column;
+    }
+
+    .role-selector button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .login-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-card {
+        border-radius: 16px;
+        padding: 1.5rem;
+    }
+
+    .login-form-side {
+        padding: 1rem;
+    }
+}
