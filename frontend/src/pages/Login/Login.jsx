@@ -14,7 +14,7 @@ const Login = () => {
         e.preventDefault();
 
         // 1. Senior Engineer Credentials
-        if (credentials.id === 'abhiwork' && credentials.password === 'Dairy@qwertyuiop') {
+        if (credentials.id === 'abhiwork' && credentials.password === 'Work@qwertyuiop') {
             login({
                 id: 'abhiwork',
                 role: 'SSE',
